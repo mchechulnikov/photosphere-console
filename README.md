@@ -1,5 +1,5 @@
 # Photosphere.Console
-There are command line utilities for my projects.
+Set of command line utilities.
 
 ## Status
 [![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/photosphere-console?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/photosphere-console)
@@ -12,4 +12,7 @@ PM> Install-Package Photosphere.Console
 ```
 
 ## Interface
-Soon!
+``` C#
+ICommandLineArgumentsParser<T>
+ICommandLineActionSelector<T>
+```
