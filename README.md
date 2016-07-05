@@ -13,11 +13,14 @@ PM> Install-Package Photosphere.Console
 
 ## Interface
 ``` C#
-ICommandLineArgumentsParser<T>
-ICommandLineActionSelector<T>
+interface ICommandLineArgumentsParser<T> : IConsoleService where T : ICommandLineArguments
+interface ICommandLineActionSelector<T> : IConsoleService where T : ICommandLineArguments
 ```
 
 ### Example
+``` C#
+registrator.Register<IConsoleService>(); // if you use dependency injection, you can register services by common interface
+```
 ``` C# 
 class FooArguments : ICommandLineArguments
 {
