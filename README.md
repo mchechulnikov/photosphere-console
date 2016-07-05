@@ -16,3 +16,55 @@ PM> Install-Package Photosphere.Console
 ICommandLineArgumentsParser<T>
 ICommandLineActionSelector<T>
 ```
+
+### Example
+``` C# 
+class FooArguments : ICommandLineArguments
+{
+  [ConsoleOption(Option = "f", BoundedActionType = typeof(CompileAction))]
+  public IReadOnlyList<string> FilePathes { get; set; }
+
+  [ConsoleOption(Option = "h", BoundedActionType = typeof(ShowHelpAction))]
+  public bool ShowHelp { get; set; }
+}
+```
+``` C#
+class DoSomethingAction : ICommandLineAction<ICommandLineArguments>
+{
+  public void Action(ICompilerArguments arguments)
+  {
+    Console.WriteLine("Do something!");
+  }
+}
+```
+``` C#
+class ShowHelpAction : ICommandLineAction<ICompilerArguments>
+{
+  public void Action(ICompilerArguments arguments)
+  {
+    Console.WriteLine("It's a help!");
+  }
+}
+```
+``` C#
+class FooProgram
+{
+  private readonly ICommandLineArgumentsParser<FooArguments> _commandLineArgumentsParser;
+  private readonly ICommandLineActionSelector<FooArguments> _commandLineActionSelector;
+
+  public FooProgram(
+    ICommandLineArgumentsParser<FooArguments> commandLineArgumentsParser,
+    ICommandLineActionSelector<FooArguments> commandLineActionSelector)
+  {
+    _commandLineArgumentsParser = commandLineArgumentsParser;
+    _commandLineActionSelector = commandLineActionSelector;
+  }
+
+  public void Start(IEnumerable<string> args)
+  {
+    var arguments = _commandLineArgumentsParser.Parse(args);
+    var action = _commandLineActionSelector.Select(arguments);
+    action(arguments);
+  }
+}
+```
