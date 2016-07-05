@@ -1,2 +1,2 @@
-# photosphere-console
-There are command line utilities for my projects. Empty yet. Soon!
+# Photosphere.Console
+There are command line utilities for my projects.
