@@ -19,7 +19,8 @@ interface ICommandLineActionSelector<T> : IConsoleService where T : ICommandLine
 
 ### Example
 ``` C#
-registrator.Register<IConsoleService>(); // if you use dependency injection, you can register services by common interface
+// if you use dependency injection, you can register services by common interface
+registrator.Register<IConsoleService>();
 ```
 ``` C# 
 class FooArguments : ICommandLineArguments
