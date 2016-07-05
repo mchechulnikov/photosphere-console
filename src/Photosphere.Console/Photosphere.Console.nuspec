@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Photosphere.Console</id>
+    <version>0.0.0.0</version>
+    <authors>Maxim Chechulnikov</authors>
+    <description>Set of command line utilities.</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/sunloving/photosphere-console</projectUrl>
+    <licenseUrl>https://github.com/sunloving/photosphere-console/blob/master/LICENSE</licenseUrl>
+  </metadata>
+  <files>
+    <file src="bin\Release\*.dll" target="lib" />
+  </files>
+</package>
