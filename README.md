@@ -7,7 +7,9 @@ There are command line utilities for my projects.
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/sunloving/photosphere-console/blob/master/LICENSE)
 
 ## Install via NuGet
-Soon!
+```
+PM> Install-Package Photosphere.Console
+```
 
 ## Interface
 Soon!
